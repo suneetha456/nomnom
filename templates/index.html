@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="msapplication-TileImage" content="https://i.ibb.co/613Cygq/card.png">
+    <meta property="og:site_name" content="nomnom">
+    <meta meta property="og:title" content="nomnom - a restaurant recommendation engine">
+    <meta property="og:description" content="nomnom is a restaurant recommender that helps you find restaurants near you using emotions, time of the day, budget etc.">
+    <meta meta property="og:image" itemprop="image" content="https://i.ibb.co/hWZNHNN/wcard.png">
+    <meta property="og:image:alt" content="nomnom - a restaurant recommendation engine">
+    <meta meta property="og:type" content="website" />
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="300">
+    <meta property="og:image:height" content="300">
+    <meta property="og:url" content="https://trynomnom.in/">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4809428776211178"
+     crossorigin="anonymous"></script>
+     <script async src="https://fundingchoicesmessages.google.com/i/pub-4809428776211178?ers=1" nonce="vNmY7xgTsW3VReoCzPkR9Q"></script><script nonce="vNmY7xgTsW3VReoCzPkR9Q">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+    <link rel="icon" type="image/x-icon" href="../static/images/logo.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/2ffa0d5e9f.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Raleway&display=swap" rel="stylesheet">
+    <meta name="google-adsense-account" content="ca-pub-4809428776211178">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nomnom</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='ext.css') }}">
+</head>
+<!-- Google tag (gtag.js) -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LPNJ4VH1FW"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LPNJ4VH1FW');
+</script>
+<body>   
+        <div id="home">
+            <img src="../static/images/mainlogo.png" class="logo">
+           <h1>Not sure where to eat? <br> 
+         Don't worry nom nom got your back</h1>
+            <a href="#name"><button id="gps">Try nom nom <i class="fa-solid fa-burger fa-bounce" style="color: #ffffff;"></i></i></button></a>
+        </div>
+        <form method="post" id="myForm">
+            <div id="name">
+                <h1>Your name?</h1>
+                <input type="area" id="personal">
+                <a href="#mood" ><img src="../static/images/arrow.png" id="next"></a>
+            </div>
+            <div id="mood">
+                <h1>Hey buddy! How you doin?</h1><br>
+                <div class="mood-options">
+                    <label class="mood-option">
+                        <input type="radio" name="mood" value="Happy">
+                        <img src="../static/images/happy.png" alt="Happy">
+                    </label>
+                    <label class="mood-option">
+                        <input type="radio" name="mood" value="Unsure">
+                        <img src="../static/images/unsure.png" alt="Neutral">
+                    </label>
+                    <label class="mood-option">
+                        <input type="radio" name="mood" value="Sad">
+                        <img src="../static/images/sad.png" alt="Sad">
+                    </label>
+                </div>
+                
+                <br>
+            <a href="#name" class="back"><img src="../static/images/arrow.png" id="back"></a>
+    
+            </div>
+            <div id="budget">
+                <h1>Pick your Wallet's fate</h1><br>
+                            <div class="mood-options">
+                    <label class="mood-option">
+                        <input type="radio" name="budget" value="Cheap">
+                        <img src="../static/images/broke.png" alt="Cheap">
+                    </label>
+                    <label class="mood-option">
+                        <input type="radio" name="budget" value="Medium">
+                        <img src="../static/images/moderate.png" alt="Medium">
+                    </label>
+                    <label class="mood-option">
+                        <input type="radio" name="budget" value="Expensive">
+                        <img src="../static/images/rich.png" alt="Expensive">
+                    </label>
+                </div>
+                <br>
+                
+            <a href="#mood" class="back"><img src="../static/images/arrow.png" id="back"></a>
+            </div>
+            <div id="aesthetics">
+                <h1>Aesthetics?</h1>
+                <div class="mood-options" style="flex-direction: column;">
+                    <label class="mood-option">
+                <input type="range" id="aes" min="0" max="10" step="1">
+                    </label>
+                    <lab class="mood-option" style="flex-direction: column;">
+                        <p id="selectedValue"><span id="valueDisplay">0</span></p>
+                    </lab>
+                </div>
+                <div class="arrow" style="flex-direction: row;">
+                    <a href="#budget" style="margin-right: 50px;" class="back"><img src="../static/images/arrow.png" id="back"></a><a href="#foodtype" style="margin-left: 50px;"><img src="../static/images/arrow.png" id="next"></a></div>
+            </div><br>
+              
+            </div>
+            <div id="foodtype">
+                <h1>Veggie Delight or Meaty Marvel</h1><br>
+                <div class="mood-options">
+                    <label class="mood-option">
+                        <input type="radio" name="foodtype" value="Veg">
+                        <img src="../static/images/veg.png" alt="Veg">
+                    </label>
+                    <label class="mood-option">
+                        <input type="radio" name="foodtype" value="Nonveg">
+                        <img src="../static/images/non veg.png" alt="Nonveg">
+                    </label>
+                </div><br>
+                <a href="#aesthetics" class="back"><img src="../static/images/arrow.png" id="back"></a>
+            </div>
+            <div id="diet">
+                <h1>Healthy, Moderate or Calories ?</h1><br>
+                <div class="mood-options">
+                    <label class="mood-option">
+                        <input type="radio" name="diet" value="Healthy">
+                        <img src="../static/images/healthy.png" alt="Healthy">
+                    </label>
+                    <label class="mood-option">
+                        <input type="radio" name="diet" value="Moderate">
+                        <img src="../static/images/moderate food.png" alt="Moderate">
+                    </label>
+                    <label class="mood-option">
+                        <input type="radio" name="diet" value="Fast Food">
+                        <img src="../static/images/fast food.png" alt="Fast Food">
+                    </label>
+                </div><br>
+                <a href="#foodtype" class="back"><img src="../static/images/arrow.png" id="back"></a>
+            </div>
+            <div id="submit">
+                <button type="submit" id="submitButton">Get Recommendations</button>
+            </div>
+        </form>
+        <div id="result">
+        </div>
+</body>
+
+
+<script>
+        if (window.location.hash) {
+            // Scroll to the top of the page to hide the hash fragment
+            window.location.href = "/";
+        }
+const globalLocationData = {
+    latitude: null,
+    longitude: null
+};
+
+// Function to request user location
+function requestLocation() {
+    if (navigator.geolocation) {
+        const watchId = navigator.geolocation.watchPosition(
+            (position) => {
+                globalLocationData.latitude = position.coords.latitude;
+                globalLocationData.longitude = position.coords.longitude;
+                sessionStorage.setItem('latitude', globalLocationData.latitude);
+                sessionStorage.setItem('longitude', globalLocationData.longitude);
+            },
+            (error) => {
+                console.error('Error getting the user location:', error);
+            }
+        );
+
+        // Clear the watch after 5 minutes (300,000 milliseconds)
+        setTimeout(() => {
+            navigator.geolocation.clearWatch(watchId);
+        }, 300000); // 300,000 milliseconds = 5 minutes
+    } else {
+        console.error('Geolocation is not supported by this browser.');
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const getLocationButton = document.getElementById("gps");
+    getLocationButton.addEventListener("click", () => {
+        //request user location
+        requestLocation();
+    });
+});
+
+// Get the range input and the value display element
+const aestheticsRange = document.getElementById("aes");
+const valueDisplay = document.getElementById("valueDisplay");
+
+// Add an event listener to update the selected value display
+aestheticsRange.addEventListener("input", function () {
+    valueDisplay.textContent = aestheticsRange.value;
+});
+
+// You can also set a default value (0 in this case)
+valueDisplay.textContent = aestheticsRange.value;
+
+// Check if "userName" exists in sessionStorage
+if (sessionStorage.getItem("userName")) {
+    // Get the "personal" element
+    var personalElement = document.getElementById("personal");
+
+    // Retrieve the user's name from sessionStorage
+    var userName = sessionStorage.getItem("userName");
+
+    // Set the value of the "personal" input to the stored name
+    personalElement.value = userName;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("myForm");
+    const resultScreen = $("#result");
+
+    function initializeRedoButton() {
+    const redoButton = document.createElement("button");
+    redoButton.type = "reset";
+    redoButton.id = "redoEverything";
+    redoButton.innerHTML = 'Redo <i class="fa-solid fa-rotate-right fa-spin" style="color: #ffffff;"></i';
+
+    // Set the height and width
+    redoButton.style.height = "50px";
+    redoButton.style.width = "160px";
+    redoButton.style.marginTop = "5px";
+
+    resultScreen.append(redoButton);
+
+    redoButton.addEventListener("click", function () {
+        var personalElement = document.getElementById("personal");
+        var theirvalue = personalElement.value;
+        sessionStorage.setItem("userName", theirvalue);
+        location.reload();
+        window.location.href = "/";
+    });
+}
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const submitButton = document.getElementById("submitButton");
+        submitButton.disabled = true;
+        let intervalId;
+        let textIndex = 0;
+        const loadingText = ["Loading", "Loading.", "Loading..", "Loading..."];
+        intervalId = setInterval(function() {
+                submitButton.textContent = loadingText[textIndex];
+                textIndex = (textIndex + 1) % loadingText.length;
+            }, 500); // Change text every half-second
+
+            // Clear the interval after 5 seconds
+            setTimeout(function() {
+                clearInterval(intervalId);
+                submitButton.textContent = "Please wait!";
+                submitButton.disabled = false;
+            }, 6000);
+        
+        // Serialize form data into JSON
+        // Serialize form data into JSON
+        const formData = new FormData(form);
+        formData.append('aes', aestheticsRange.value); // Append the aesthetic value to the FormData object
+        if(sessionStorage.getItem('latitude')){
+        formData.append('latitude',sessionStorage.getItem('latitude'));
+        formData.append('longitude',sessionStorage.getItem('longitude'));
+        }
+        const formDataObj = {};
+        formData.forEach((value, key) => {
+            formDataObj[key] = value;
+        });
+        console.log(formDataObj);
+
+        
+        fetch("/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded", // Change content type
+            },
+            body: new URLSearchParams(formDataObj).toString(), // Serialize as URL-encoded
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                // Handle the response (data) from the server
+                resultScreen.innerHTML = ''; // Clear previous content
+                const mappings = {
+                                mood: { "Happy": "happy.png", "Unsure": "unsure.png", "Sad": "sad.png" },
+                                budget: { "Cheap": "broke.png", "Medium": "moderate.png", "Expensive": "rich.png" },
+                                aes: {"1":"1.png","0":"0.png","3":"3.png","4":"4.png","5":"5.png","6":"6.png","2":"2.png","7":"7.png","8":"8.png","9":"9.png","10":"10.png"},
+                                foodtype: { "Veg": "veg.png", "Nonveg": "non veg.png" },
+                                diet: { "Healthy": "healthy.png", "Moderate": "moderate food.png", "Fast Food": "fast food.png" }
+                                };
+
+                if (data && Array.isArray(data) && data.some(item => item.Restaurant)) {
+                    if (data.length > 0) {
+                        //console.log(data)
+                        const iconImages = [];
+
+                        for (const category in formDataObj) {
+                        if (formDataObj[category]) {
+                            if (mappings[category]) {
+                            // Create an img element for the icon.
+                            const iconImg = document.createElement("img");
+                            iconImg.src = `../static/images/${mappings[category][formDataObj[category]]}`;
+                            iconImg.alt = formDataObj[category];
+                            iconImg.style.width = "0.8em"; // Set the image width to fit the font size.
+                            iconImg.style.height = "0.8em";
+                            iconImages.push(iconImg);
+                            }
+                        }
+                        }
+
+                        const uname = document.createElement("p");
+                        uname.id = "uname";
+                        uname.textContent = document.getElementById("personal").value + " for ";
+
+                        iconImages.forEach((iconImg) => {
+                        uname.append(iconImg);
+                        uname.append(" ")
+                        });
+
+                        const textNode = document.createTextNode(", Try these :)");
+                        uname.append(textNode);
+
+                        resultScreen.append(uname);
+
+                        
+                        const recommendationsList = document.createElement("ul");
+
+                        data.forEach((recommendation) => {
+                            var resbox = $("<div class='res-container'></div>");
+                            var imgbox = $("<div class='img-container'></div>");
+                            var textbox= $("<div class='text-container'></div>");
+                            var firstrow = $("<div class='first-row'></div>");
+                            var secondrow = $("<div class='second-row'></div>")
+                            const imgElement = document.createElement("img");
+                            imgElement.src = recommendation.ImageURL;
+                            imgElement.alt = recommendation.Restaurant;
+                            
+                            const restaurantname=document.createElement("p");
+                            restaurantname.innerHTML = `${recommendation.Restaurant}&nbsp;<sup>${recommendation.Rating}&#9733;</sup>`;
+
+                            const restaurantLink = document.createElement("a");
+                            restaurantLink.target = "_blank";
+                            restaurantLink.href = recommendation.URL;
+
+                            const iconElement = document.createElement("i");
+                            iconElement.className = "fa-solid fa-arrow-up-right-from-square fa-2xs";
+                            iconElement.style.color = "#652f0b";
+
+                            restaurantLink.appendChild(iconElement);
+
+                            const restaurantadd=document.createElement("p");
+                            restaurantadd.textContent=recommendation.Address;
+
+
+                            imgbox.append(imgElement);
+                            firstrow.append(restaurantname);
+                            firstrow.append(restaurantLink);
+                            secondrow.append(restaurantadd)   
+                            textbox.append(firstrow);
+                            textbox.append(secondrow);
+                            resbox.append(imgbox);
+                            resbox.append(textbox);
+                            resultScreen.append(resbox);
+                        });
+
+
+                        
+
+                        // Add the "redo" button below the recommendations
+                        initializeRedoButton();
+                        const help = document.createElement("a");
+                        help.href = "https://forms.gle/LDLYtraiPQ2PHx9a6";
+                        help.id="help";
+                        help.textContent = "contribute to nomnom";
+                        help.target="_blank";
+                        resultScreen.append(help);
+                        window.location.href = "#result";
+                    } else {
+                        const uname = document.createElement("p");
+                        uname.textContent = document.getElementById("personal").value + ", first error 😔";
+                        resultScreen.append(uname);
+                        initializeRedoButton();
+                        window.location.href = "#result";
+                    }
+                } else if (data.error) {
+                    const iconImages = [];
+                        for (const category in formDataObj) {
+                        if (formDataObj[category]) {
+                            if (mappings[category]) {
+                            // Create an img element for the icon.
+                            const iconImg = document.createElement("img");
+                            iconImg.src = `../static/images/${mappings[category][formDataObj[category]]}`;
+                            iconImg.alt = formDataObj[category];
+                            iconImg.style.width = "0.8em"; // Set the image width to fit the font size.
+                            iconImg.style.height = "0.8em";
+                            iconImages.push(iconImg);
+                            }
+                        }
+                        }
+                        const uname = document.createElement("p");
+                        uname.id = "uname";
+                        uname.textContent = document.getElementById("personal").value + " for ";
+                        iconImages.forEach((iconImg) => {
+                        uname.append(iconImg);
+                        uname.append(" ")
+                        });
+                        const textNode = document.createTextNode(", We couln't find any 😔");
+                        uname.append(textNode);
+                        resultScreen.append(uname);
+                        initializeRedoButton();
+                    window.location.href = "#result";
+                }
+            })
+            .catch((error) => {
+                const mappings = {
+                                mood: { "Happy": "happy.png", "Unsure": "unsure.png", "Sad": "sad.png" },
+                                budget: { "Cheap": "broke.png", "Medium": "moderate.png", "Expensive": "rich.png" },
+                                aes: {"1":"1.png","0":"0.png","3":"3.png","4":"4.png","5":"5.png","6":"6.png","2":"2.png","7":"7.png","8":"8.png","9":"9.png","10":"10.png"},
+                                foodtype: { "Veg": "veg.png", "Nonveg": "non veg.png" },
+                                diet: { "Healthy": "healthy.png", "Moderate": "moderate food.png", "Fast Food": "fast food.png" }
+                                };
+                                const iconImages = [];
+                        for (const category in formDataObj) {
+                        if (formDataObj[category]) {
+                            if (mappings[category]) {
+                            // Create an img element for the icon.
+                            const iconImg = document.createElement("img");
+                            iconImg.src = `../static/images/${mappings[category][formDataObj[category]]}`;
+                            iconImg.alt = formDataObj[category];
+                            iconImg.style.width = "0.8em"; // Set the image width to fit the font size.
+                            iconImg.style.height = "0.8em";
+                            iconImages.push(iconImg);
+                            }
+                        }
+                        }
+                        const uname = document.createElement("p");
+                        uname.id = "uname";
+                        uname.textContent = "No results for ";
+                        iconImages.forEach((iconImg) => {
+                        uname.append(iconImg);
+                        uname.append(" ")
+                        });
+                        resultScreen.append(uname);
+                initializeRedoButton();
+                const help = document.createElement("a");
+                help.href = "https://forms.gle/LDLYtraiPQ2PHx9a6";
+                help.textContent = "Contribute to nomnom";
+                help.id="help";
+                help.target="_blank";
+                resultScreen.append(help);
+                window.location.href = "#result";
+                
+            });
+    });
+});
+
+</script>
+
+
+<!--Ignore this JS-->
+<script>
+    
+document.addEventListener("DOMContentLoaded", function() {
+    const radioButtons = document.querySelectorAll('input[name="mood"]');
+    
+    radioButtons.forEach(function(radioButton) {
+        radioButton.addEventListener("change", function() {
+            if (this.checked) {
+              
+                // Scroll to the element with id "budget"
+                const budgetElement = document.getElementById("budget");
+                if (budgetElement) {
+                    budgetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+});
+document.addEventListener("DOMContentLoaded", function() {
+    const radioButtons = document.querySelectorAll('input[name="budget"]');
+    
+    radioButtons.forEach(function(radioButton) {
+        radioButton.addEventListener("change", function() {
+            if (this.checked) {
+                // Scroll to the element with id "budget"
+                const budgetElement = document.getElementById("aesthetics");
+                if (budgetElement) {
+                    budgetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+});
+document.addEventListener("DOMContentLoaded", function() {
+    const radioButtons = document.querySelectorAll('input[name="aesthetics"]');
+    
+    radioButtons.forEach(function(radioButton) {
+        radioButton.addEventListener("change", function() {
+            if (this.checked) {
+                // Scroll to the element with id "budget"
+                const budgetElement = document.getElementById("foodtype");
+                if (budgetElement) {
+                    budgetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+});
+document.addEventListener("DOMContentLoaded", function() {
+    const radioButtons = document.querySelectorAll('input[name="foodtype"]');
+    
+    radioButtons.forEach(function(radioButton) {
+        radioButton.addEventListener("change", function() {
+            if (this.checked) {
+                // Scroll to the element with id "budget"
+                const budgetElement = document.getElementById("diet");
+                if (budgetElement) {
+                    budgetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+});
+document.addEventListener("DOMContentLoaded",()=>{
+    // Method to clear the previous input
+    const backButtons = document.querySelectorAll(".back")
+    backButtons.forEach((btn)=>{
+        btn.addEventListener("click",()=>{
+            const prevElementName = btn.getAttribute("href").replace("#",'')
+            const prevRadioButtons = document.getElementsByName(prevElementName);
+            Array.from(prevRadioButtons).forEach((radioButton) => {
+                radioButton.checked=false;
+            });
+        })
+    })
+    // Method to clear the next input
+    const nextButtons = document.querySelectorAll("#next")
+    nextButtons.forEach((btn)=>{
+        btn.addEventListener("click",()=>{
+            const nextElementName = btn.parentElement.getAttribute("href").replace("#",'')
+            const nextRadioButtons = document.getElementsByName(nextElementName);
+            Array.from(nextRadioButtons).forEach((radioButton) => {
+                radioButton.checked=false;
+            });
+        })
+    })
+
+})
+document.addEventListener("DOMContentLoaded", function() {
+    const radioButtons = document.querySelectorAll('input[name="diet"]');
+    
+    radioButtons.forEach(function(radioButton) {
+        radioButton.addEventListener("change", function() {
+            if (this.checked) {
+                // Scroll to the element with id "budget"
+                const budgetElement = document.getElementById("submit");
+                if (budgetElement) {
+                    budgetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+});
+
+const inputField = document.getElementById('personal');
+const nextButton = document.getElementById('next');
+
+
+inputField.addEventListener('keydown', function (event) {
+    if (event.keyCode === 13) {
+        // Trigger a click event on the "Next" button
+        nextButton.click();
+    }
+});
+
+</script>
+</html>
